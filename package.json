@@ -1,6 +1,6 @@
 {
-  "version": "0.0.1",
-  "name": "@kryptomon/schemas",
+  "version": "0.0.2",
+  "name": "@kmon/schemas",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "license": "Apache-2.0",

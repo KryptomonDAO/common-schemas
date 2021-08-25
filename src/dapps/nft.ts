@@ -12,6 +12,7 @@ export type NFT = {
   owner: string
   name: string
   category: NFTCategory
+  tokenURI: string
   image: string
   url: string
   issuedId: string | null
@@ -96,6 +97,9 @@ export namespace NFT {
         type: 'string',
       },
       name: {
+        type: 'string',
+      },
+      tokenURI: {
         type: 'string',
       },
       image: {
