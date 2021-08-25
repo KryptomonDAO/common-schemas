@@ -3,8 +3,6 @@ import { BodyShape } from './body-shape'
 import { ChainId } from './chain-id'
 import { Network } from './network'
 import { NFTCategory } from './nft-category'
-import { Rarity } from './rarity'
-import { WearableCategory } from './wearable-category'
 
 export type NFT = {
   id: string
@@ -19,28 +17,56 @@ export type NFT = {
   issuedId: string | null
   itemId: string | null
   data: {
-    parcel?: {
-      x: string
-      y: string
+    kryptomon?: {
       description: string | null
-      estate: {
-        tokenId: string
-        name: string
-      } | null
-    }
-    estate?: {
-      size: number
-      parcels: { x: number; y: number }[]
-      description: string | null
-    }
-    wearable?: {
-      description: string
-      category: WearableCategory
-      rarity: Rarity
-      bodyShapes: BodyShape[]
-    }
-    ens?: {
-      subdomain: string
+      isHatched: boolean
+      matronId: string
+      sireId: string
+      status: string
+      timeBorn: number
+      genes: {
+        fireGenes: number
+        fireTalent: number
+        water: number
+        waterTalent: number
+        ice: number
+        iceTalent: number
+        ground: number
+        groundTalent: number
+        air: number
+        airTalent: number
+        electro: number
+        electroTalent: number
+        ghost: number
+        ghostTalent: number
+        grass: number
+        grassTalent: number
+        color: number
+        sex: number
+        generalTalent: number
+        attack: number
+        defense: number
+        special: number
+        xFactor: number
+        growthTalentFactor: number
+        constitution: number
+        healthPoints: number
+        speed: number
+        affections: number
+        crazyness: number
+        instinct: number
+        hunger: number
+        lazyness: number
+        brave: number
+        smart: number
+        bodySize: number
+        ego: number
+        skinType: number
+        generation: number
+      },
+      extraData: {
+        unfreezable: number
+      }
     }
   }
   network: Network
@@ -82,90 +108,160 @@ export namespace NFT {
         type: 'object',
         nullable: false,
         properties: {
-          parcel: {
+          kryptomon: {
             type: 'object',
+            nullable: true,
+            required: [],
             properties: {
               description: {
-                type: ['string'],
-                nullable: true,
+                type: 'string',
+                nullable: true
               },
-              x: {
+              isHatched: {
+                type: 'boolean',
+              },
+              matronId: {
                 type: 'string',
               },
-              y: {
+              sireId: {
                 type: 'string',
               },
-              estate: {
+              status: {
+                type: 'string',
+              },
+              timeBorn: {
+                type: 'number',
+              },
+              genes: {
                 type: 'object',
+                required: [],
                 properties: {
-                  tokenId: {
-                    type: 'string',
+                  fireGenes: {
+                    type: 'number',
                   },
-                  name: {
-                    type: 'string',
+                  fireTalent: {
+                    type: 'number',
                   },
-                },
-                required: ['tokenId', 'name'],
-                nullable: true,
-              },
-            },
-            required: ['description', 'x', 'y', 'estate'],
-            nullable: true,
-          },
-          estate: {
-            type: 'object',
-            properties: {
-              description: {
-                type: ['string'],
-                nullable: true,
-              },
-              size: {
-                type: 'integer',
-              },
-              parcels: {
-                type: 'array',
-                items: {
-                  type: 'object',
-                  properties: {
-                    x: {
-                      type: 'number',
-                    },
-                    y: {
-                      type: 'number',
-                    },
+                  water: {
+                    type: 'number',
                   },
-                  required: ['x', 'y'],
-                },
+                  waterTalent: {
+                    type: 'number',
+                  },
+                  ice: {
+                    type: 'number',
+                  },
+                  iceTalent: {
+                    type: 'number',
+                  },
+                  ground: {
+                    type: 'number',
+                  },
+                  groundTalent: {
+                    type: 'number',
+                  },
+                  air: {
+                    type: 'number',
+                  },
+                  airTalent: {
+                    type: 'number',
+                  },
+                  electro: {
+                    type: 'number',
+                  },
+                  electroTalent: {
+                    type: 'number',
+                  },
+                  ghost: {
+                    type: 'number',
+                  },
+                  ghostTalent: {
+                    type: 'number',
+                  },
+                  grass: {
+                    type: 'number',
+                  },
+                  grassTalent: {
+                    type: 'number',
+                  },
+                  color: {
+                    type: 'number',
+                  },
+                  sex: {
+                    type: 'number',
+                  },
+                  generalTalent: {
+                    type: 'number',
+                  },
+                  attack: {
+                    type: 'number',
+                  },
+                  defense: {
+                    type: 'number',
+                  },
+                  special: {
+                    type: 'number',
+                  },
+                  xFactor: {
+                    type: 'number',
+                  },
+                  growthTalentFactor: {
+                    type: 'number',
+                  },
+                  constitution: {
+                    type: 'number',
+                  },
+                  healthPoints: {
+                    type: 'number',
+                  },
+                  speed: {
+                    type: 'number',
+                  },
+                  affections: {
+                    type: 'number',
+                  },
+                  crazyness: {
+                    type: 'number',
+                  },
+                  instinct: {
+                    type: 'number',
+                  },
+                  hunger: {
+                    type: 'number',
+                  },
+                  lazyness: {
+                    type: 'number',
+                  },
+                  brave: {
+                    type: 'number',
+                  },
+                  smart: {
+                    type: 'number',
+                  },
+                  bodySize: {
+                    type: 'number',
+                  },
+                  ego: {
+                    type: 'number',
+                  },
+                  skinType: {
+                    type: 'number',
+                  },
+                  generation: {
+                    type: 'number',
+                  },
+                }
               },
-            },
-            required: ['description', 'size', 'parcels'],
-            nullable: true,
-          },
-          wearable: {
-            type: 'object',
-            properties: {
-              bodyShapes: {
-                type: 'array',
-                items: BodyShape.schema,
-              },
-              category: WearableCategory.schema,
-              description: {
-                type: 'string',
-              },
-              rarity: Rarity.schema,
-            },
-            required: ['bodyShapes', 'category', 'description', 'rarity'],
-            nullable: true,
-          },
-          ens: {
-            type: 'object',
-            properties: {
-              subdomain: {
-                type: 'string',
-              },
-            },
-            required: ['subdomain'],
-            nullable: true,
+              extraData: {
+                type: 'object',
+                required: [],
+                properties: {
+                  unfreezable: {
+                    type: 'number',
+                  },
+                }
+              }
+            }
           },
         },
         required: [],

@@ -1,7 +1,7 @@
 # common-schemas
 
 ```bash
-npm i @dcl/schemas
+npm i @kryptomon/schemas
 ```
 
 ### Design considerations
@@ -44,9 +44,9 @@ Please add types and schemas of your domain into the `src/<team>` folder, also a
 
 ## Informing changes
 
-Please notify about changes to the schemas to the teams by adding the whole team (i.e. `@decentraland/dapps`) as reviewers of the pull requests.
+Please notify about changes to the schemas to the teams by adding the whole team (i.e. `@kryptomon/dapps`) as reviewers of the pull requests.
 
-It is recommended that if you are a stakeholder of the interoperable parts of Decentraland, you are subscribed to this repository (wathing it in the button up right).
+It is recommended that if you are a stakeholder of the interoperable parts of Kryptomon, you are subscribed to this repository (wathing it in the button up right).
 
 ## Making changes
 

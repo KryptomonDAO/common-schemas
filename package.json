@@ -1,6 +1,6 @@
 {
-  "version": "0.0.0",
-  "name": "@dcl/schemas",
+  "version": "0.0.1",
+  "name": "@kryptomon/schemas",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "license": "Apache-2.0",

@@ -1,10 +1,7 @@
 import { generateValidator, JSONSchema, ValidateFunction } from '../validation'
 
 export enum NFTCategory {
-  PARCEL = 'parcel',
-  ESTATE = 'estate',
-  WEARABLE = 'wearable',
-  ENS = 'ens',
+  KRYPTOMON = 'kryptomon'
 }
 
 export namespace NFTCategory {
