@@ -3,7 +3,7 @@ import { NFTCategory } from '../src'
 import { testTypeSignature } from './test-utils'
 
 describe('NFTCategory tests', () => {
-  const nftCategory: NFTCategory = NFTCategory.PARCEL
+  const nftCategory: NFTCategory = NFTCategory.KRYPTOMON
 
   testTypeSignature(NFTCategory, nftCategory)
 
