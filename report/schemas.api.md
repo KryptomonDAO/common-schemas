@@ -361,7 +361,7 @@ export type NFT = {
         crazyness: number;
         instinct: number;
         hunger: number;
-        lazyness: number;
+        laziness: number;
         brave: number;
         smart: number;
         bodySize: number;
