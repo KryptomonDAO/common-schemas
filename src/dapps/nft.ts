@@ -1,312 +1,320 @@
-import { generateValidator, JSONSchema, ValidateFunction } from '../validation'
-import { BodyShape } from './body-shape'
-import { ChainId } from './chain-id'
-import { Network } from './network'
-import { NFTCategory } from './nft-category'
+import { generateValidator, JSONSchema, ValidateFunction } from "../validation";
+import { BodyShape } from "./body-shape";
+import { ChainId } from "./chain-id";
+import { Network } from "./network";
+import { NFTCategory } from "./nft-category";
 
 export type NFT = {
-  id: string
-  contractAddress: string
-  tokenId: string
-  activeOrderId: string | null
-  owner: string
-  name: string
-  category: NFTCategory
-  tokenURI: string
-  image: string
-  url: string
-  issuedId: string | null
-  itemId: string | null
+  id: string;
+  contractAddress: string;
+  tokenId: string;
+  activeOrderId: string | null;
+  owner: string;
+  name: string;
+  category: NFTCategory;
+  tokenURI: string;
+  image: string;
+  url: string;
+  issuedId: string | null;
+  itemId: string | null;
   data: {
     kryptomon?: {
-      description: string | null
-      isHatched: boolean
-      matronId: string
-      sireId: string
-      status: string
-      timeBorn: number
+      description: string | null;
+      isHatched: boolean;
+      matronId: string;
+      sireId: string;
+      status: string;
+      timeBorn: number;
+      elementType: string;
+      speciality: string;
       genes: {
-        fireGenes: number
-        fireTalent: number
-        water: number
-        waterTalent: number
-        ice: number
-        iceTalent: number
-        ground: number
-        groundTalent: number
-        air: number
-        airTalent: number
-        electro: number
-        electroTalent: number
-        ghost: number
-        ghostTalent: number
-        grass: number
-        grassTalent: number
-        color: number
-        sex: number
-        generalTalent: number
-        attack: number
-        defense: number
-        special: number
-        xFactor: number
-        growthTalentFactor: number
-        constitution: number
-        healthPoints: number
-        speed: number
-        affections: number
-        crazyness: number
-        instinct: number
-        hunger: number
-        lazyness: number
-        brave: number
-        smart: number
-        bodySize: number
-        ego: number
-        skinType: number
-        generation: number
-      },
+        fire: number;
+        fireTalent: number;
+        water: number;
+        waterTalent: number;
+        ice: number;
+        iceTalent: number;
+        ground: number;
+        groundTalent: number;
+        air: number;
+        airTalent: number;
+        electro: number;
+        electroTalent: number;
+        ghost: number;
+        ghostTalent: number;
+        grass: number;
+        grassTalent: number;
+        color: number;
+        sex: number;
+        generalTalent: number;
+        attack: number;
+        defense: number;
+        special: number;
+        xFactor: number;
+        growthTalentFactor: number;
+        constitution: number;
+        healthPoints: number;
+        speed: number;
+        affections: number;
+        crazyness: number;
+        instinct: number;
+        hunger: number;
+        lazyness: number;
+        brave: number;
+        smart: number;
+        bodySize: number;
+        ego: number;
+        skinType: number;
+        generation: number;
+      };
       extraData: {
-        unfreezable: number
-      }
-    }
-  }
-  network: Network
-  chainId: ChainId
-  createdAt: number
-  updatedAt: number
-}
+        unfreezable: number;
+      };
+    };
+  };
+  network: Network;
+  chainId: ChainId;
+  createdAt: number;
+  updatedAt: number;
+};
 
 export namespace NFT {
   export const schema: JSONSchema<NFT> = {
-    type: 'object',
+    type: "object",
     properties: {
       id: {
-        type: 'string',
+        type: "string",
       },
       tokenId: {
-        type: 'string',
+        type: "string",
       },
       contractAddress: {
-        type: 'string',
+        type: "string",
       },
       activeOrderId: {
-        type: ['string'],
+        type: ["string"],
         nullable: true,
       },
       owner: {
-        type: 'string',
+        type: "string",
       },
       name: {
-        type: 'string',
+        type: "string",
       },
       tokenURI: {
-        type: 'string',
+        type: "string",
       },
       image: {
-        type: 'string',
+        type: "string",
       },
       url: {
-        type: 'string',
+        type: "string",
       },
       data: {
-        type: 'object',
+        type: "object",
         nullable: false,
         properties: {
           kryptomon: {
-            type: 'object',
+            type: "object",
             nullable: true,
             required: [],
             properties: {
               description: {
-                type: 'string',
-                nullable: true
+                type: "string",
+                nullable: true,
               },
               isHatched: {
-                type: 'boolean',
+                type: "boolean",
               },
               matronId: {
-                type: 'string',
+                type: "string",
               },
               sireId: {
-                type: 'string',
+                type: "string",
               },
               status: {
-                type: 'string',
+                type: "string",
               },
               timeBorn: {
-                type: 'number',
+                type: "number",
+              },
+              elementType: {
+                type: "string",
+              },
+              speciality: {
+                type: "string",
               },
               genes: {
-                type: 'object',
+                type: "object",
                 required: [],
                 properties: {
-                  fireGenes: {
-                    type: 'number',
+                  fire: {
+                    type: "number",
                   },
                   fireTalent: {
-                    type: 'number',
+                    type: "number",
                   },
                   water: {
-                    type: 'number',
+                    type: "number",
                   },
                   waterTalent: {
-                    type: 'number',
+                    type: "number",
                   },
                   ice: {
-                    type: 'number',
+                    type: "number",
                   },
                   iceTalent: {
-                    type: 'number',
+                    type: "number",
                   },
                   ground: {
-                    type: 'number',
+                    type: "number",
                   },
                   groundTalent: {
-                    type: 'number',
+                    type: "number",
                   },
                   air: {
-                    type: 'number',
+                    type: "number",
                   },
                   airTalent: {
-                    type: 'number',
+                    type: "number",
                   },
                   electro: {
-                    type: 'number',
+                    type: "number",
                   },
                   electroTalent: {
-                    type: 'number',
+                    type: "number",
                   },
                   ghost: {
-                    type: 'number',
+                    type: "number",
                   },
                   ghostTalent: {
-                    type: 'number',
+                    type: "number",
                   },
                   grass: {
-                    type: 'number',
+                    type: "number",
                   },
                   grassTalent: {
-                    type: 'number',
+                    type: "number",
                   },
                   color: {
-                    type: 'number',
+                    type: "number",
                   },
                   sex: {
-                    type: 'number',
+                    type: "number",
                   },
                   generalTalent: {
-                    type: 'number',
+                    type: "number",
                   },
                   attack: {
-                    type: 'number',
+                    type: "number",
                   },
                   defense: {
-                    type: 'number',
+                    type: "number",
                   },
                   special: {
-                    type: 'number',
+                    type: "number",
                   },
                   xFactor: {
-                    type: 'number',
+                    type: "number",
                   },
                   growthTalentFactor: {
-                    type: 'number',
+                    type: "number",
                   },
                   constitution: {
-                    type: 'number',
+                    type: "number",
                   },
                   healthPoints: {
-                    type: 'number',
+                    type: "number",
                   },
                   speed: {
-                    type: 'number',
+                    type: "number",
                   },
                   affections: {
-                    type: 'number',
+                    type: "number",
                   },
                   crazyness: {
-                    type: 'number',
+                    type: "number",
                   },
                   instinct: {
-                    type: 'number',
+                    type: "number",
                   },
                   hunger: {
-                    type: 'number',
+                    type: "number",
                   },
                   lazyness: {
-                    type: 'number',
+                    type: "number",
                   },
                   brave: {
-                    type: 'number',
+                    type: "number",
                   },
                   smart: {
-                    type: 'number',
+                    type: "number",
                   },
                   bodySize: {
-                    type: 'number',
+                    type: "number",
                   },
                   ego: {
-                    type: 'number',
+                    type: "number",
                   },
                   skinType: {
-                    type: 'number',
+                    type: "number",
                   },
                   generation: {
-                    type: 'number',
+                    type: "number",
                   },
-                }
+                },
               },
               extraData: {
-                type: 'object',
+                type: "object",
                 required: [],
                 properties: {
                   unfreezable: {
-                    type: 'number',
+                    type: "number",
                   },
-                }
-              }
-            }
+                },
+              },
+            },
           },
         },
         required: [],
       },
       issuedId: {
-        type: 'string',
+        type: "string",
         nullable: true,
       },
       itemId: {
-        type: 'string',
+        type: "string",
         nullable: true,
       },
       category: NFTCategory.schema,
       network: Network.schema,
       chainId: ChainId.schema,
       createdAt: {
-        type: 'integer',
+        type: "integer",
       },
       updatedAt: {
-        type: 'integer',
+        type: "integer",
       },
     },
     required: [
-      'id',
-      'tokenId',
-      'contractAddress',
-      'activeOrderId',
-      'owner',
-      'name',
-      'image',
-      'url',
-      'data',
-      'issuedId',
-      'itemId',
-      'category',
-      'network',
-      'chainId',
-      'createdAt',
-      'updatedAt',
+      "id",
+      "tokenId",
+      "contractAddress",
+      "activeOrderId",
+      "owner",
+      "name",
+      "image",
+      "url",
+      "data",
+      "issuedId",
+      "itemId",
+      "category",
+      "network",
+      "chainId",
+      "createdAt",
+      "updatedAt",
     ],
-  }
+  };
 
-  export const validate: ValidateFunction<NFT> = generateValidator(schema)
+  export const validate: ValidateFunction<NFT> = generateValidator(schema);
 }

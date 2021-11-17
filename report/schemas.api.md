@@ -307,75 +307,77 @@ export namespace Network {
 //
 // @public (undocumented)
 export type NFT = {
-    id: string;
-    contractAddress: string;
-    tokenId: string;
-    activeOrderId: string | null;
-    owner: string;
-    name: string;
-    category: NFTCategory;
-    tokenURI: string;
-    image: string;
-    url: string;
-    issuedId: string | null;
-    itemId: string | null;
-    data: {
-        kryptomon?: {
-            description: string | null;
-            isHatched: boolean;
-            matronId: string;
-            sireId: string;
-            status: string;
-            timeBorn: number;
-            genes: {
-                fireGenes: number;
-                fireTalent: number;
-                water: number;
-                waterTalent: number;
-                ice: number;
-                iceTalent: number;
-                ground: number;
-                groundTalent: number;
-                air: number;
-                airTalent: number;
-                electro: number;
-                electroTalent: number;
-                ghost: number;
-                ghostTalent: number;
-                grass: number;
-                grassTalent: number;
-                color: number;
-                sex: number;
-                generalTalent: number;
-                attack: number;
-                defense: number;
-                special: number;
-                xFactor: number;
-                growthTalentFactor: number;
-                constitution: number;
-                healthPoints: number;
-                speed: number;
-                affections: number;
-                crazyness: number;
-                instinct: number;
-                hunger: number;
-                lazyness: number;
-                brave: number;
-                smart: number;
-                bodySize: number;
-                ego: number;
-                skinType: number;
-                generation: number;
-            };
-            extraData: {
-                unfreezable: number;
-            };
-        };
+  id: string;
+  contractAddress: string;
+  tokenId: string;
+  activeOrderId: string | null;
+  owner: string;
+  name: string;
+  category: NFTCategory;
+  tokenURI: string;
+  image: string;
+  url: string;
+  issuedId: string | null;
+  itemId: string | null;
+  data: {
+    kryptomon?: {
+      description: string | null;
+      isHatched: boolean;
+      matronId: string;
+      sireId: string;
+      status: string;
+      timeBorn: number;
+      elementType: string;
+      speciality: string;
+      genes: {
+        fire: number;
+        fireTalent: number;
+        water: number;
+        waterTalent: number;
+        ice: number;
+        iceTalent: number;
+        ground: number;
+        groundTalent: number;
+        air: number;
+        airTalent: number;
+        electro: number;
+        electroTalent: number;
+        ghost: number;
+        ghostTalent: number;
+        grass: number;
+        grassTalent: number;
+        color: number;
+        sex: number;
+        generalTalent: number;
+        attack: number;
+        defense: number;
+        special: number;
+        xFactor: number;
+        growthTalentFactor: number;
+        constitution: number;
+        healthPoints: number;
+        speed: number;
+        affections: number;
+        crazyness: number;
+        instinct: number;
+        hunger: number;
+        lazyness: number;
+        brave: number;
+        smart: number;
+        bodySize: number;
+        ego: number;
+        skinType: number;
+        generation: number;
+      };
+      extraData: {
+        unfreezable: number;
+      };
     };
-    network: Network;
-    chainId: ChainId;
-    createdAt: number;
-    updatedAt: number;
+  };
+  network: Network;
+  chainId: ChainId;
+  createdAt: number;
+  updatedAt: number;
 };
 
 // @public (undocumented)
