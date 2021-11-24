@@ -3,7 +3,7 @@ import { ChainId, ChainName, getChainId } from '../src'
 import { testTypeSignature } from './test-utils'
 
 describe('ChainName tests', () => {
-  const chainName: ChainName = ChainName.ETHEREUM_KOVAN
+  const chainName: ChainName = ChainName.ETHEREUM_RINKEBY
 
   testTypeSignature(ChainName, chainName)
 
@@ -14,7 +14,7 @@ describe('ChainName tests', () => {
   })
 
   it('Should get a valid chain id', () => {
-    expect(getChainId(ChainName.ETHEREUM_MAINNET)).toEqual(ChainId.ETHEREUM_MAINNET)
+    expect(getChainId(ChainName.ETHEREUM_RINKEBY)).toEqual(ChainId.ETHEREUM_RINKEBY)
   })
 
   it('Should get null if the chain name is not valid', () => {
