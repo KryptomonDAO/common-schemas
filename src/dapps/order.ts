@@ -11,6 +11,7 @@ export type Order = {
   buyer: string | null
   price: string
   status: ListingStatus
+  paymentToken: string
   expiresAt: number
   createdAt: number
   updatedAt: number
@@ -42,6 +43,9 @@ export namespace Order {
         type: 'string',
       },
       status: ListingStatus.schema,
+      paymentToken: {
+        type: 'string',
+      },
       network: Network.schema,
       chainId: ChainId.schema,
       expiresAt: {
@@ -62,6 +66,7 @@ export namespace Order {
       'buyer',
       'price',
       'status',
+      'paymentToken',
       'network',
       'chainId',
       'expiresAt',
