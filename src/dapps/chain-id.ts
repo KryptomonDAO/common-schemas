@@ -7,15 +7,9 @@ import { ChainName } from './chain-name'
  * @alpha
  */
 export enum ChainId {
-  ETHEREUM_MAINNET = 1,
-  ETHEREUM_ROPSTEN = 3,
   ETHEREUM_RINKEBY = 4,
-  ETHEREUM_GOERLI = 5,
-  ETHEREUM_KOVAN = 42,
-  MATIC_MAINNET = 137,
-  MATIC_MUMBAI = 80001,
-  BSC = 56,
-  BST_TESTNET = 97
+  BSC_MAINNET = 56,
+  BSC_TESTNET = 97
 }
 
 /**
@@ -24,20 +18,12 @@ export enum ChainId {
  */
 export function getChainName(chainId: ChainId): ChainName | null {
   switch (chainId) {
-    case ChainId.ETHEREUM_MAINNET:
-      return ChainName.ETHEREUM_MAINNET
-    case ChainId.ETHEREUM_ROPSTEN:
-      return ChainName.ETHEREUM_ROPSTEN
     case ChainId.ETHEREUM_RINKEBY:
       return ChainName.ETHEREUM_RINKEBY
-    case ChainId.ETHEREUM_GOERLI:
-      return ChainName.ETHEREUM_GOERLI
-    case ChainId.ETHEREUM_KOVAN:
-      return ChainName.ETHEREUM_KOVAN
-    case ChainId.MATIC_MAINNET:
-      return ChainName.MATIC_MAINNET
-    case ChainId.MATIC_MUMBAI:
-      return ChainName.MATIC_MUMBAI
+    case ChainId.BSC_MAINNET:
+      return ChainName.BSC_MAINNET
+    case ChainId.BSC_TESTNET:
+      return ChainName.BSC_TESTNET
     default:
       return null
   }

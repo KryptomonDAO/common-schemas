@@ -16,7 +16,7 @@ describe('Bid tests', () => {
     tokenId: '2041694201525630780780247644590609268611',
     status: ListingStatus.OPEN,
     network: Network.ETHEREUM,
-    chainId: ChainId.ETHEREUM_MAINNET,
+    chainId: ChainId.ETHEREUM_RINKEBY,
     expiresAt: 1627689634000,
     createdAt: 1626316584000,
     updatedAt: 1626316584000,
