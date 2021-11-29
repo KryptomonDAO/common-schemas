@@ -6,8 +6,9 @@ import { generateValidator, JSONSchema, ValidateFunction } from '../validation'
  */
 export enum Coin {
   ETH = 'ETH',
+  KMON = 'KMON',
   BNB = 'BNB',
-  KMON = 'KMON'
+  WBNB = 'WBNB'
 }
 
 /**
