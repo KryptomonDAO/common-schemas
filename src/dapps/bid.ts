@@ -8,6 +8,7 @@ export type Bid = {
   bidder: string
   seller: string
   price: string
+  paymentToken: string
   fingerprint: string
   status: ListingStatus
   blockchainId: string
@@ -35,6 +36,9 @@ export namespace Bid {
         type: 'string',
       },
       price: {
+        type: 'string',
+      },
+      paymentToken: {
         type: 'string',
       },
       fingerprint: {
@@ -70,6 +74,7 @@ export namespace Bid {
       'bidder',
       'seller',
       'price',
+      'paymentToken',
       'fingerprint',
       'status',
       'blockchainId',

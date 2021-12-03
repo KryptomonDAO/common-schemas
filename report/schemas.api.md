@@ -25,6 +25,7 @@ export type Bid = {
     bidder: string;
     seller: string;
     price: string;
+    paymentToken: string;
     fingerprint: string;
     status: ListingStatus;
     blockchainId: string;

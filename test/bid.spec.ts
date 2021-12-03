@@ -8,6 +8,7 @@ describe('Bid tests', () => {
     bidder: '0xc3e43a67c0b9505a690dd80491cf7bf6a3dc26e6',
     seller: '0x81e4fb0c64bf49f89b57f6648562fc9a791b2e92',
     price: '5000000000000000000000',
+    paymentToken: '',
     fingerprint: '0x',
     blockchainId:
       '0x8f5a0664d8ff4d91241540b1dc372cfd76ac22eb9c5522be46a5459c6cebe80a',
