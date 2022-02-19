@@ -28,6 +28,12 @@ export type NFT = {
       timeBorn: number;
       elementType: string;
       speciality: string;
+      breedingsLeft: number;
+      breedingCount: number;
+      totalBreedingCount: number;
+      timeCanBreed: number;
+      lastEvolved: string | null;
+      maxBreedingsDuringLifePhase: number;
       genes: {
         fire: number;
         fireTalent: number;
@@ -148,6 +154,25 @@ export namespace NFT {
               },
               speciality: {
                 type: "string",
+              },
+              breedingsLeft : {
+                type: "number",
+              },
+              breedingCount : {
+                type: "number",
+              },
+              totalBreedingCount : {
+                type: "number",
+              },
+              timeCanBreed : {
+                type: "number",
+              },
+              lastEvolved : {
+                type: "string",
+                nullable: true
+              },
+              maxBreedingsDuringLifePhase: {
+                type: "number"
               },
               genes: {
                 type: "object",
