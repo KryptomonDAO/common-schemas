@@ -8,6 +8,7 @@ export type NFT = {
   id: string;
   contractAddress: string;
   tokenId: string;
+  activeBreedingOrderId: string | null;
   activeOrderId: string | null;
   owner: string;
   name: string;
@@ -27,6 +28,12 @@ export type NFT = {
       timeBorn: number;
       elementType: string;
       speciality: string;
+      breedingsLeft: number;
+      breedingCount: number;
+      totalBreedingCount: number;
+      timeCanBreed: number;
+      lastEvolved: string | null;
+      maxBreedingsDuringLifePhase: number;
       genes: {
         fire: number;
         fireTalent: number;
@@ -91,6 +98,10 @@ export namespace NFT {
       contractAddress: {
         type: "string",
       },
+      activeBreedingOrderId: {
+        type: "string",
+        nullable: true,
+      },
       activeOrderId: {
         type: ["string"],
         nullable: true,
@@ -143,6 +154,25 @@ export namespace NFT {
               },
               speciality: {
                 type: "string",
+              },
+              breedingsLeft : {
+                type: "number",
+              },
+              breedingCount : {
+                type: "number",
+              },
+              totalBreedingCount : {
+                type: "number",
+              },
+              timeCanBreed : {
+                type: "number",
+              },
+              lastEvolved : {
+                type: "string",
+                nullable: true
+              },
+              maxBreedingsDuringLifePhase: {
+                type: "number"
               },
               genes: {
                 type: "object",
