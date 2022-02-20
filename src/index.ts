@@ -15,6 +15,7 @@ export { Network } from './dapps/network'
 export { NFTCategory } from './dapps/nft-category'
 export { NFT } from './dapps/nft'
 export { Order } from './dapps/order'
+export { BreedingOrder } from './dapps/breedingOrder'
 export { Rarity } from './dapps/rarity'
 export { WearableCategory } from './dapps/wearable-category'
 export {
