@@ -26,6 +26,7 @@ export type NFT = {
       sireId: string;
       status: string;
       timeBorn: number;
+      timeHatched: number;
       elementType: string;
       speciality: string;
       breedingsLeft: number;
@@ -33,6 +34,7 @@ export type NFT = {
       totalBreedingCount: number;
       timeCanBreed: number;
       lastEvolved: number;
+      lastTimeBred: number;
       maxBreedingsDuringLifePhase: number;
       genes: {
         fire: number;
@@ -149,6 +151,9 @@ export namespace NFT {
               timeBorn: {
                 type: "number",
               },
+              timeHatched: {
+                type: "number",
+              },
               elementType: {
                 type: "string",
               },
@@ -170,6 +175,9 @@ export namespace NFT {
               lastEvolved : {
                 type: "number",
                 nullable: true
+              },
+              lastTimeBred : {
+                type: "number"
               },
               maxBreedingsDuringLifePhase: {
                 type: "number"
