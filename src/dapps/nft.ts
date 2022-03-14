@@ -26,6 +26,7 @@ export type NFT = {
       sireId: string;
       status: string;
       timeBorn: number;
+      timeHatched: number;
       elementType: string;
       speciality: string;
       breedingsLeft: number;
@@ -147,6 +148,9 @@ export namespace NFT {
                 type: "string",
               },
               timeBorn: {
+                type: "number",
+              },
+              timeHatched: {
                 type: "number",
               },
               elementType: {
