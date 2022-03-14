@@ -34,6 +34,7 @@ export type NFT = {
       totalBreedingCount: number;
       timeCanBreed: number;
       lastEvolved: number;
+      lastTimeBred: number;
       maxBreedingsDuringLifePhase: number;
       genes: {
         fire: number;
@@ -174,6 +175,9 @@ export namespace NFT {
               lastEvolved : {
                 type: "number",
                 nullable: true
+              },
+              lastTimeBred : {
+                type: "number"
               },
               maxBreedingsDuringLifePhase: {
                 type: "number"
