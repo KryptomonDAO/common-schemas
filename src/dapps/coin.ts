@@ -8,7 +8,8 @@ export enum Coin {
   ETH = 'ETH',
   KMON = 'KMON',
   BNB = 'BNB',
-  WBNB = 'WBNB'
+  WBNB = 'WBNB',
+  USD = 'USD'
 }
 
 /**
