@@ -36,6 +36,7 @@ export type NFT = {
       lastEvolved: number;
       lastTimeBred: number;
       maxBreedingsDuringLifePhase: number;
+      ranking: number;
       genes: {
         fire: number;
         fireTalent: number;
