@@ -137,6 +137,9 @@ export namespace NFT {
                 type: "string",
                 nullable: true,
               },
+              ranking: {
+                type: "number"
+              },
               isHatched: {
                 type: "boolean",
               },
