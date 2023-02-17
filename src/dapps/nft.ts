@@ -80,6 +80,9 @@ export type NFT = {
       extraData: {
         unfreezable: number;
       };
+      gameMetadata: {
+        
+      }
     };
   };
   network: Network;
@@ -315,6 +318,10 @@ export namespace NFT {
                   },
                 },
               },
+              gameMetadata: {
+                type: "object",
+                required: []
+              }
             },
           },
         },
