@@ -28,6 +28,7 @@ export type NFT = {
       timeBorn: number;
       timeHatched: number;
       elementType: string;
+      elementTypeSecond: string;
       speciality: string;
       breedingsLeft: number;
       breedingCount: number;
@@ -81,7 +82,7 @@ export type NFT = {
         unfreezable: number;
       };
       gameMetadata: {
-        
+
       }
     };
   };
@@ -162,6 +163,9 @@ export namespace NFT {
                 type: "number",
               },
               elementType: {
+                type: "string",
+              },
+              elementTypeSecond: {
                 type: "string",
               },
               speciality: {
