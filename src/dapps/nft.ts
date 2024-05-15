@@ -38,6 +38,20 @@ export type NFT = {
       lastTimeBred: number;
       maxBreedingsDuringLifePhase: number;
       ranking: number;
+      fireAttack: number;
+      waterAttack: number;
+      iceAttack: number;
+      groundAttack: number;
+      airAttack: number;
+      electroAttack: number;
+      ghostAttack: number;
+      grassAttack: number;
+      physicalAttack: number;
+      physicalDefense: number;
+      elementalDefense: number;
+      healthPoints: number;
+      critical: number;
+      evasion: number;
       genes: {
         fire: number;
         fireTalent: number;
