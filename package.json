@@ -1,5 +1,5 @@
 {
-  "version": "0.0.24",
+  "version": "0.0.27",
   "name": "@kmon/schemas",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
