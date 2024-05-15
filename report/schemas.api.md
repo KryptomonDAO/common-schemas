@@ -358,6 +358,7 @@ export type NFT = {
             timeBorn: number;
             timeHatched: number;
             elementType: string;
+            elementTypeSecond: string;
             speciality: string;
             breedingsLeft: number;
             breedingCount: number;
@@ -367,6 +368,20 @@ export type NFT = {
             lastTimeBred: number;
             maxBreedingsDuringLifePhase: number;
             ranking: number;
+            fireAttack: number;
+            waterAttack: number;
+            iceAttack: number;
+            groundAttack: number;
+            airAttack: number;
+            electroAttack: number;
+            ghostAttack: number;
+            grassAttack: number;
+            physicalAttack: number;
+            physicalDefense: number;
+            elementalDefense: number;
+            healthPoints: number;
+            critical: number;
+            evasion: number;
             genes: {
                 fire: number;
                 fireTalent: number;
@@ -744,8 +759,8 @@ export namespace World {
 // src/dapps/contract.ts:11:3 - (ae-incompatible-release-tags) The symbol "chainId" is marked as @public, but its signature references "ChainId" which is marked as @alpha
 // src/dapps/item.ts:26:3 - (ae-incompatible-release-tags) The symbol "network" is marked as @public, but its signature references "Network" which is marked as @alpha
 // src/dapps/item.ts:27:3 - (ae-incompatible-release-tags) The symbol "chainId" is marked as @public, but its signature references "ChainId" which is marked as @alpha
-// src/dapps/nft.ts:88:3 - (ae-incompatible-release-tags) The symbol "network" is marked as @public, but its signature references "Network" which is marked as @alpha
-// src/dapps/nft.ts:89:3 - (ae-incompatible-release-tags) The symbol "chainId" is marked as @public, but its signature references "ChainId" which is marked as @alpha
+// src/dapps/nft.ts:103:3 - (ae-incompatible-release-tags) The symbol "network" is marked as @public, but its signature references "Network" which is marked as @alpha
+// src/dapps/nft.ts:104:3 - (ae-incompatible-release-tags) The symbol "chainId" is marked as @public, but its signature references "ChainId" which is marked as @alpha
 // src/dapps/order.ts:18:3 - (ae-incompatible-release-tags) The symbol "network" is marked as @public, but its signature references "Network" which is marked as @alpha
 // src/dapps/order.ts:19:3 - (ae-incompatible-release-tags) The symbol "chainId" is marked as @public, but its signature references "ChainId" which is marked as @alpha
 // src/platform/scene/spawn-point.ts:6:3 - (ae-forgotten-export) The symbol "SinglePosition" needs to be exported by the entry point index.d.ts
