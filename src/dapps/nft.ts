@@ -151,6 +151,48 @@ export namespace NFT {
             nullable: true,
             required: [],
             properties: {
+              fireAttack: {
+                type: "number",
+              },
+              waterAttack: {
+                type: "number",
+              },
+              iceAttack: {
+                type: "number",
+              },
+              groundAttack: {
+                type: "number",
+              },
+              airAttack: {
+                type: "number",
+              },
+              electroAttack: {
+                type: "number",
+              },
+              ghostAttack: {
+                type: "number",
+              },
+              grassAttack: {
+                type: "number",
+              },
+              physicalAttack: {
+                type: "number",
+              },
+              physicalDefense: {
+                type: "number",
+              },
+              elementalDefense: {
+                type: "number",
+              },
+              healthPoints: {
+                type: "number",
+              },
+              critical: {
+                type: "number",
+              },
+              evasion: {
+                type: "number",
+              },
               description: {
                 type: "string",
                 nullable: true,
