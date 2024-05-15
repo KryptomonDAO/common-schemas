@@ -66,24 +66,39 @@ export namespace BodyShape {
     validate: ValidateFunction<BodyShape>;
 }
 
+// Warning: (ae-missing-release-tag) "BreedingOrder" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+// Warning: (ae-missing-release-tag) "BreedingOrder" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export type BreedingOrder = {
+    id: string;
+    kryptomonAddress: string;
+    tokenId: string;
+    breeder: string;
+    price: string;
+    status: ListingStatus;
+    createdAt: number;
+    updatedAt: number;
+    network: Network;
+    chainId: ChainId;
+};
+
+// @public (undocumented)
+export namespace BreedingOrder {
+    const // (undocumented)
+    schema: JSONSchema<BreedingOrder>;
+    const // (undocumented)
+    validate: ValidateFunction<BreedingOrder>;
+}
+
 // @alpha
 export enum ChainId {
     // (undocumented)
-    BSC = 56,
+    BSC_MAINNET = 56,
     // (undocumented)
-    ETHEREUM_GOERLI = 5,
+    BSC_TESTNET = 97,
     // (undocumented)
-    ETHEREUM_KOVAN = 42,
-    // (undocumented)
-    ETHEREUM_MAINNET = 1,
-    // (undocumented)
-    ETHEREUM_RINKEBY = 4,
-    // (undocumented)
-    ETHEREUM_ROPSTEN = 3,
-    // (undocumented)
-    MATIC_MAINNET = 137,
-    // (undocumented)
-    MATIC_MUMBAI = 80001
+    ETHEREUM_RINKEBY = 4
 }
 
 // @alpha (undocumented)
@@ -97,19 +112,11 @@ export namespace ChainId {
 // @alpha
 export enum ChainName {
     // (undocumented)
-    ETHEREUM_GOERLI = "GOERLI",
+    BSC_MAINNET = "BSC_MAINNET",
     // (undocumented)
-    ETHEREUM_KOVAN = "KOVAN",
+    BSC_TESTNET = "BSC_TESTNET",
     // (undocumented)
-    ETHEREUM_MAINNET = "MAINNET",
-    // (undocumented)
-    ETHEREUM_RINKEBY = "RINKEBY",
-    // (undocumented)
-    ETHEREUM_ROPSTEN = "ROPSTEN",
-    // (undocumented)
-    MATIC_MAINNET = "MATIC",
-    // (undocumented)
-    MATIC_MUMBAI = "MUMBAI"
+    ETHEREUM_RINKEBY = "RINKEBY"
 }
 
 // @alpha (undocumented)
@@ -118,6 +125,28 @@ export namespace ChainName {
     schema: JSONSchema<ChainName>;
     const // (undocumented)
     validate: ValidateFunction<ChainName>;
+}
+
+// @alpha
+export enum Coin {
+    // (undocumented)
+    BNB = "BNB",
+    // (undocumented)
+    ETH = "ETH",
+    // (undocumented)
+    KMON = "KMON",
+    // (undocumented)
+    USD = "USD",
+    // (undocumented)
+    WBNB = "WBNB"
+}
+
+// @alpha (undocumented)
+export namespace Coin {
+    const // (undocumented)
+    schema: JSONSchema<Coin>;
+    const // (undocumented)
+    validate: ValidateFunction<Coin>;
 }
 
 // Warning: (ae-missing-release-tag) "Contract" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
@@ -290,9 +319,7 @@ export enum Network {
     // (undocumented)
     BSC = "BSC",
     // (undocumented)
-    ETHEREUM = "ETHEREUM",
-    // (undocumented)
-    MATIC = "MATIC"
+    ETHEREUM = "ETHEREUM"
 }
 
 // @alpha (undocumented)
@@ -308,77 +335,88 @@ export namespace Network {
 //
 // @public (undocumented)
 export type NFT = {
-  id: string;
-  contractAddress: string;
-  tokenId: string;
-  activeOrderId: string | null;
-  owner: string;
-  name: string;
-  category: NFTCategory;
-  tokenURI: string;
-  image: string;
-  url: string;
-  issuedId: string | null;
-  itemId: string | null;
-  data: {
-    kryptomon?: {
-      description: string | null;
-      isHatched: boolean;
-      matronId: string;
-      sireId: string;
-      status: string;
-      timeBorn: number;
-      elementType: string;
-      speciality: string;
-      genes: {
-        fire: number;
-        fireTalent: number;
-        water: number;
-        waterTalent: number;
-        ice: number;
-        iceTalent: number;
-        ground: number;
-        groundTalent: number;
-        air: number;
-        airTalent: number;
-        electro: number;
-        electroTalent: number;
-        ghost: number;
-        ghostTalent: number;
-        grass: number;
-        grassTalent: number;
-        color: number;
-        sex: number;
-        generalTalent: number;
-        attack: number;
-        defense: number;
-        special: number;
-        xFactor: number;
-        growthTalentFactor: number;
-        constitution: number;
-        healthPoints: number;
-        speed: number;
-        affections: number;
-        crazyness: number;
-        instinct: number;
-        hunger: number;
-        laziness: number;
-        brave: number;
-        smart: number;
-        bodySize: number;
-        ego: number;
-        skinType: number;
-        generation: number;
-      };
-      extraData: {
-        unfreezable: number;
-      };
+    id: string;
+    contractAddress: string;
+    tokenId: string;
+    activeBreedingOrderId: string | null;
+    activeOrderId: string | null;
+    owner: string;
+    name: string;
+    category: NFTCategory;
+    tokenURI: string;
+    image: string;
+    url: string;
+    issuedId: string | null;
+    itemId: string | null;
+    data: {
+        kryptomon?: {
+            description: string | null;
+            isHatched: boolean;
+            matronId: string;
+            sireId: string;
+            status: string;
+            timeBorn: number;
+            timeHatched: number;
+            elementType: string;
+            speciality: string;
+            breedingsLeft: number;
+            breedingCount: number;
+            totalBreedingCount: number;
+            timeCanBreed: number;
+            lastEvolved: number;
+            lastTimeBred: number;
+            maxBreedingsDuringLifePhase: number;
+            ranking: number;
+            genes: {
+                fire: number;
+                fireTalent: number;
+                water: number;
+                waterTalent: number;
+                ice: number;
+                iceTalent: number;
+                ground: number;
+                groundTalent: number;
+                air: number;
+                airTalent: number;
+                electro: number;
+                electroTalent: number;
+                ghost: number;
+                ghostTalent: number;
+                grass: number;
+                grassTalent: number;
+                color: number;
+                sex: number;
+                generalTalent: number;
+                attack: number;
+                defense: number;
+                special: number;
+                xFactor: number;
+                growthTalentFactor: number;
+                constitution: number;
+                healthPoints: number;
+                speed: number;
+                affections: number;
+                crazyness: number;
+                instinct: number;
+                hunger: number;
+                laziness: number;
+                brave: number;
+                smart: number;
+                bodySize: number;
+                ego: number;
+                skinType: number;
+                generation: number;
+            };
+            extraData: {
+                unfreezable: number;
+            };
+            gameMetadata: {};
+        };
     };
-  };
-  network: Network;
-  chainId: ChainId;
-  createdAt: number;
-  updatedAt: number;
+    network: Network;
+    chainId: ChainId;
+    createdAt: number;
+    updatedAt: number;
 };
 
 // @public (undocumented)
@@ -418,6 +456,7 @@ export type Order = {
     buyer: string | null;
     price: string;
     status: ListingStatus;
+    paymentToken: string;
     expiresAt: number;
     createdAt: number;
     updatedAt: number;
@@ -694,18 +733,21 @@ export namespace World {
     validate: ValidateFunction<World>;
 }
 
+
 // Warnings were encountered during analysis:
 //
-// src/dapps/bid.ts:20:3 - (ae-incompatible-release-tags) The symbol "network" is marked as @public, but its signature references "Network" which is marked as @alpha
-// src/dapps/bid.ts:21:3 - (ae-incompatible-release-tags) The symbol "chainId" is marked as @public, but its signature references "ChainId" which is marked as @alpha
+// src/dapps/bid.ts:21:3 - (ae-incompatible-release-tags) The symbol "network" is marked as @public, but its signature references "Network" which is marked as @alpha
+// src/dapps/bid.ts:22:3 - (ae-incompatible-release-tags) The symbol "chainId" is marked as @public, but its signature references "ChainId" which is marked as @alpha
+// src/dapps/breedingOrder.ts:15:3 - (ae-incompatible-release-tags) The symbol "network" is marked as @public, but its signature references "Network" which is marked as @alpha
+// src/dapps/breedingOrder.ts:16:3 - (ae-incompatible-release-tags) The symbol "chainId" is marked as @public, but its signature references "ChainId" which is marked as @alpha
 // src/dapps/contract.ts:10:3 - (ae-incompatible-release-tags) The symbol "network" is marked as @public, but its signature references "Network" which is marked as @alpha
 // src/dapps/contract.ts:11:3 - (ae-incompatible-release-tags) The symbol "chainId" is marked as @public, but its signature references "ChainId" which is marked as @alpha
 // src/dapps/item.ts:26:3 - (ae-incompatible-release-tags) The symbol "network" is marked as @public, but its signature references "Network" which is marked as @alpha
 // src/dapps/item.ts:27:3 - (ae-incompatible-release-tags) The symbol "chainId" is marked as @public, but its signature references "ChainId" which is marked as @alpha
-// src/dapps/nft.ts:73:3 - (ae-incompatible-release-tags) The symbol "network" is marked as @public, but its signature references "Network" which is marked as @alpha
-// src/dapps/nft.ts:74:3 - (ae-incompatible-release-tags) The symbol "chainId" is marked as @public, but its signature references "ChainId" which is marked as @alpha
-// src/dapps/order.ts:17:3 - (ae-incompatible-release-tags) The symbol "network" is marked as @public, but its signature references "Network" which is marked as @alpha
-// src/dapps/order.ts:18:3 - (ae-incompatible-release-tags) The symbol "chainId" is marked as @public, but its signature references "ChainId" which is marked as @alpha
+// src/dapps/nft.ts:88:3 - (ae-incompatible-release-tags) The symbol "network" is marked as @public, but its signature references "Network" which is marked as @alpha
+// src/dapps/nft.ts:89:3 - (ae-incompatible-release-tags) The symbol "chainId" is marked as @public, but its signature references "ChainId" which is marked as @alpha
+// src/dapps/order.ts:18:3 - (ae-incompatible-release-tags) The symbol "network" is marked as @public, but its signature references "Network" which is marked as @alpha
+// src/dapps/order.ts:19:3 - (ae-incompatible-release-tags) The symbol "chainId" is marked as @public, but its signature references "ChainId" which is marked as @alpha
 // src/platform/scene/spawn-point.ts:6:3 - (ae-forgotten-export) The symbol "SinglePosition" needs to be exported by the entry point index.d.ts
 // src/platform/scene/spawn-point.ts:6:3 - (ae-forgotten-export) The symbol "MultiPosition" needs to be exported by the entry point index.d.ts
 
